@@ -26,8 +26,9 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     super
     if resource.valid? && resource.voluntary_contribution.present?
-      RegistrationsMailer.voluntary_contribution_email(params[:user][:email]) # , pruefen ob jeder sei eigenes profil hat
-      # params[:user][:voluntary_contribution].to_i).deliver_later
+      RegistrationsMailer.voluntary_contribution_email(
+      params[:user][:email], # pruefen ob jeder sei eigenes profil hat
+      params[:user][:voluntary_contribution].to_i).deliver_later
     end
   end
 

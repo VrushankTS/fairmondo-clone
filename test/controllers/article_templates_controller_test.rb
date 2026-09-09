@@ -15,7 +15,7 @@ class ArticleTemplatesControllerTest < ActionController::TestCase
   end
 
   def invalid_attributes
-    valid_attributes.merge article_template_name: nil
+    valid_attributes.merge title: nil
   end
 
   let :valid_update_attributes do

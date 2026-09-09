@@ -1,4 +1,8 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
+
+# Lock older gem versions compatible with Ruby 2.6
+gem 'ffi', '< 1.15.0'
+gem 'i18n', '~> 1.8.2'
 
 # Rails
 gem 'rails', '~> 5.1.7'
@@ -7,7 +11,7 @@ gem 'activerecord-session_store' # sessions in activerecord
 
 # Plattforms Ruby
 platforms :ruby do
-  gem 'therubyracer' # js runtime
+  # gem 'therubyracer' # js runtime
   gem 'pg', '~> 0.21' # postgres
 end
 
@@ -47,7 +51,7 @@ gem 'chunky_png' # needed for sprite-factory
 ## JS
 gem 'jquery-ui-rails', '~> 5.0.4'
 gem 'qtip2-jquery-rails'
-gem 'i18n-js'
+gem 'i18n-js', '~> 3.9'
 gem 'coffee-rails'
 gem 'therubyrhino'
 gem 'selectivizr-rails'
@@ -82,8 +86,8 @@ gem 'sidekiq'
 gem 'sidekiq-scheduler'
 gem 'sinatra', '>= 1.3.0', require: nil
 gem 'delayed_paperclip', '2.9.2'
-gem 'bluepill' # legacy, remove when eye stable
-gem 'eye'
+# gem 'bluepill' # legacy, remove when eye stable
+# gem 'eye' # kostya-sigar dependency incompatible with modern systems
 gem 'redis-namespace'
 
 # # ---------- Tools ----------
@@ -93,7 +97,7 @@ gem 'kontoapi-ruby' # KontoAPI checks bank data
 gem 'ibanomat' # accound number to IBAN
 gem 'memoist' # Support for memoization
 gem 'rails_admin', '>= 0.6.6' # Administrative backend
-gem 'rails_admin_statistics', github: 'KonstantinKo/rails_admin_statistics'
+gem 'rails_admin_statistics', git: 'https://github.com/KonstantinKo/rails_admin_statistics.git'
 gem 'rails_admin_nested_set'
 gem 'rack-rewrite' # Redirects
 gem 'nokogiri'
@@ -108,7 +112,7 @@ gem 'exception_notification'
 # ---------- API ----------
 
 # Gem for connecting to FastBill Automatic
-gem 'fastbill-automatic', github: 'marcaltmann/fastbill-automatic'
+gem 'fastbill-automatic', git: 'https://github.com/marcaltmann/fastbill-automatic.git'
 
 gem 'savon' # interacing with other SOAP apis:
 gem 'rubyntlm' # https://github.com/savonrb/savon/issues/593
@@ -141,7 +145,7 @@ group :test do
   gem 'minitest-spec-rails'
 
   gem 'shoulda', '~> 3.5'
-  gem 'shoulda-matchers', '~> 2.0'
+  gem 'shoulda-matchers', '~> 3.1'
 
   # System testst
   gem 'capybara'
@@ -181,3 +185,5 @@ group :development, :test, :staging do
   gem 'factory_bot_rails', '~> 4.11.1'
   gem 'faker'
 end
+
+gem "state_machines-activerecord", "~> 0.8.0"
