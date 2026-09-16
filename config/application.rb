@@ -27,6 +27,7 @@ module Fairmondo
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
 
+    config.load_defaults 5.2
     config.eager_load_paths << Rails.root.join('lib/autoload')
 
     # Activate observers that should always be running.

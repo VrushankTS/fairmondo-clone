@@ -5,7 +5,7 @@ gem 'ffi', '< 1.15.0'
 gem 'i18n', '~> 1.8.2'
 
 # Rails
-gem 'rails', '~> 5.1.7'
+gem 'rails', '~> 6.0.6'
 gem 'rails-observers' # observers got extracted since rails 4
 gem 'activerecord-session_store' # sessions in activerecord
 
@@ -24,7 +24,7 @@ gem 'enumerize', '>= 0.5.1' # enums as symbols in ar
 gem 'state_machines' # State Machines in Rails
 gem 'amoeba'
 gem 'sanitize' # Parser based sanitization
-gem 'awesome_nested_set', '3.1.3'
+gem 'awesome_nested_set', '~> 3.2'
 gem 'friendly_id', '>= 4.0.9' # Friendly_id for beautiful links
 
 # pseudo models
@@ -143,6 +143,7 @@ group :test do
   gem 'rails-controller-testing'
 
   gem 'minitest-spec-rails'
+  gem 'minitest', '= 5.10.3'
 
   gem 'shoulda', '~> 3.5'
   gem 'shoulda-matchers', '~> 3.1'
@@ -152,7 +153,7 @@ group :test do
 	gem 'selenium-webdriver'
 
   # mocks and stubs
-  gem 'minitest-rails', '~> 3.0'
+  gem 'minitest-rails', '~> 6.0'
   gem 'mocha'
   gem 'webmock'
   gem 'fakeredis'
@@ -187,3 +188,4 @@ group :development, :test, :staging do
 end
 
 gem "state_machines-activerecord", "~> 0.8.0"
+gem "concurrent-ruby", "1.3.4"

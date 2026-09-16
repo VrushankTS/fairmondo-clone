@@ -3,12 +3,14 @@ FROM ruby:2.7-alpine
 # Install build dependencies
 RUN apk add --no-cache \
     build-base \
+    musl-dev \
     postgresql-dev \
     imagemagick \
     nodejs \
     postgresql-client \
     git \
-    tzdata
+    tzdata \
+    ruby-dev
 
 WORKDIR /app
 
